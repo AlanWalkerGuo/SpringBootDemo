@@ -44,8 +44,8 @@
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-parent</artifactId>
-      <!--由于在parent指定了version这里不用指定-->
+      <artifactId>spring-boot-starter-web</artifactId>
+      <!--由于我们在上面指定了parent这是springboot提供的一个依赖所以不需要指定版本号-->
     </dependency>
   </dependencies>
 
