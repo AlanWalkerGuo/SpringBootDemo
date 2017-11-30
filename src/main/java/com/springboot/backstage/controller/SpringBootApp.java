@@ -18,7 +18,7 @@ import java.util.List;
 @SpringBootApplication
 public class SpringBootApp extends WebMvcConfigurerAdapter {
 
-    /*@Override
+    @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         super.configureMessageConverters(converters);
         //1.需要先定义一个convert消息转换的对象
@@ -36,7 +36,7 @@ public class SpringBootApp extends WebMvcConfigurerAdapter {
         fastConverter.setFastJsonConfig(fastJsonConfig);
 
         converters.add(fastConverter);
-    }*/
+    }
 
    /* *//**
      * 在这里使用@Bean注入FastJsonHttpMessageConverter
