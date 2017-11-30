@@ -35,6 +35,7 @@
     <version>1.4.1.RELEASE</version>
   </parent>
 
+<!-- 指定JDK版本号-->
   <properties>
     <java.version>1.8</java.version>
   </properties>
@@ -42,11 +43,23 @@
 
 
   <dependencies>
+    <!--Springboot-->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
       <!--由于我们在上面指定了parent这是springboot提供的一个依赖所以不需要指定版本号-->
     </dependency>
+
+    <!--添加fastjson依赖包-->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.41</version>
+    </dependency>
+
   </dependencies>
+
+
+
 
 </project>
