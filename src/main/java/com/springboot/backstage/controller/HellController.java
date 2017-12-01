@@ -14,7 +14,7 @@ public class HellController {
 
     @RequestMapping("/hello")
     public String hello(){
-        return "hello";
+        return "hellows";
     }
 
     /**
@@ -25,9 +25,29 @@ public class HellController {
     public Student getStudent(){
         Student student =new Student();
         student.setId("1");
-        student.setName("张三");
+        student.setName("李四");
         student.setBirthdate(new Date());
         return student;
     }
+
+    /**
+     * Springbootm默认使用jackson解析json
+     * @return
+     */
+    @RequestMapping("/test")
+    public String test(){
+        return "test";
+    }
+
+    /**
+     * Springbootm默认使用jackson解析json
+     * @return
+     */
+    @RequestMapping("/test2")
+    public String test2(){
+        return "test5";
+    }
+
+
 
 }
