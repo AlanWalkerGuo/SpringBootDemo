@@ -4,15 +4,17 @@ import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * 这是一个测试实体类
  */
-public class Student {
+public class Student implements Serializable {
     private String id;
     private String name;
     @JSONField(format = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date   birthdate;
     public String getId() {
         return id;
