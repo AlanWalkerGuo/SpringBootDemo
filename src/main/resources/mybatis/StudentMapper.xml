@@ -3,9 +3,35 @@
 
 
 <mapper namespace="com.springboot.backstage.dao.StudentMapper">
+    <resultMap id="StudentMap" type="com.springboot.backstage.entity.Student">
+        <id property="id" column="ID"></id>
+        <result property="name" column="NAME"></result>
+        <result property="birthdate" column="BIRTHDATE"></result>
+
+    </resultMap>
+
+    <sql id="Student_List">
+        ID as id,
+        NAME as name,
+        BIRTHDATE as birthdate
+    </sql>
+
+
     <insert id="insertStudent">
       INSERT INTO TEST_STUDENT
       (ID,NAME,BIRTHDATE)
       VALUE (#{id},#{name},#{birthdate})
     </insert>
+    
+    <select id="selectStudentList" resultMap="StudentMap">
+        SELECT
+        <include refid="Student_List"/>
+        FROM
+        TEST_STUDENT
+    </select>
+
+    <delete id="delectStudent">
+        DELETE FROM TEST_STUDENT WHERE ID=#{id}
+    </delete>
+
 </mapper>

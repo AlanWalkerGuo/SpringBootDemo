@@ -17,7 +17,6 @@ import java.util.List;
 
 @SpringBootApplication
 @MapperScan("com.springboot.backstage.dao")
-@ServletComponentScan("com.springboot.backstage.config")
 public class SpringBootApp extends WebMvcConfigurerAdapter {
 
     @Override

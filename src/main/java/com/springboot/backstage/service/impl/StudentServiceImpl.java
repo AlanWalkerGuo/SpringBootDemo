@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class StudentServiceImpl implements StudentService {
     @Autowired
@@ -15,6 +17,19 @@ public class StudentServiceImpl implements StudentService {
     @Override
     @Transactional
     public int save(Student student) {
-        return studentMapper.insertStudent(student);
+        int i=studentMapper.insertStudent(student);
+        int x=1/0;
+        return i;
+    }
+
+    @Override
+    public List<Student> queryList() {
+        return studentMapper.selectStudentList();
+    }
+
+    @Override
+    @Transactional
+    public int removeStudent(String id) {
+        return studentMapper.delectStudent(id);
     }
 }
