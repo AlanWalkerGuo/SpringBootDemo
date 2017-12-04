@@ -40,4 +40,4 @@ spring:
 ########################################################
 
 mybatis:
-  mapperLocations: classpath:mybatis/*.xml
+  mapperLocations: classpath:mybatis/*/*.xml

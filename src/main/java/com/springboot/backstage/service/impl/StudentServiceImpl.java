@@ -17,9 +17,8 @@ public class StudentServiceImpl implements StudentService {
     @Override
     @Transactional
     public int save(Student student) {
-        int i=studentMapper.insertStudent(student);
-        int x=1/0;
-        return i;
+        return studentMapper.insertStudent(student);
+
     }
 
     @Override
