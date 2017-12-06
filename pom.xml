@@ -64,6 +64,7 @@
       <optional>true</optional>
       <scope>true</scope>
     </dependency>
+
     <!--mysql 数据库驱动-->
     <dependency>
       <groupId>mysql</groupId>

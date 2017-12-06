@@ -10,13 +10,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootApplication
-@MapperScan("com.springboot.backstage.dao")
+@MapperScan("com.springboot.backstage.ceshi.dao")
 public class SpringBootApp extends WebMvcConfigurerAdapter {
 
     @Override
