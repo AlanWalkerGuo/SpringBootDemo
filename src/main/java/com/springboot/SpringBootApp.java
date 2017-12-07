@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootApplication
-@MapperScan("com.springboot.backstage.ceshi.dao")
+@MapperScan("com.springboot.backstage.dao")
 public class SpringBootApp extends WebMvcConfigurerAdapter {
 
     @Override

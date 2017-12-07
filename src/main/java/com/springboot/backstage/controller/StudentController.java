@@ -3,13 +3,14 @@ package com.springboot.backstage.controller;
 import com.springboot.backstage.entity.Student;
 import com.springboot.backstage.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 import java.util.List;
 
-@RestController
+@Controller
 public class StudentController {
     @Autowired
     private StudentService studentService;
@@ -27,12 +28,8 @@ public class StudentController {
     }
 
     @RequestMapping("/ceshi")
-    public void ceshi(){
-        Student student=new Student();
-        student.setId("10");
-        student.setName("拉拉");
-        student.setBirthdate(new Date());
-        studentService.save(student);
+    public String ceshi(){
+        return "/backstage/cesh.html";
 
     }
 
