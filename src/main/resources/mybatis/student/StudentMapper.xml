@@ -3,7 +3,7 @@
 
 
 <mapper namespace="com.springboot.backstage.dao.StudentMapper">
-    <resultMap id="StudentMap" type="com.springboot.backstage.entity.Student">
+    <resultMap id="StudentMap" type="Student">
         <id property="id" column="ID"></id>
         <result property="name" column="NAME"></result>
         <result property="birthdate" column="BIRTHDATE"></result>
@@ -23,14 +23,14 @@
       VALUE (#{id},#{name},#{birthdate})
     </insert>
     
-    <select id="selectStudentList" resultMap="StudentMap">
+    <select id="selectStudentList" resultType="Student">
         SELECT
         <include refid="Student_List"/>
         FROM
         TEST_STUDENT
     </select>
 
-    <delete id="delectStudent">
+    <delete id="delectStudent"  parameterType="String">
         DELETE FROM TEST_STUDENT WHERE ID=#{id}
     </delete>
 

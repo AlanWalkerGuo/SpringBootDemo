@@ -19,7 +19,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public ModelAndView defaultExceptionHandler(HttpServletRequest req, Exception e){
         //打印异常信息
-        e.printStackTrace();
+        logger.error("【系统异常】",e);
 
         ModelAndView mv =new ModelAndView();
         mv.setViewName("/error/404.html");
