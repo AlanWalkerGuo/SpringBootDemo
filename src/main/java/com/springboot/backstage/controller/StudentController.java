@@ -28,7 +28,7 @@ public class StudentController {
     }
 
     @RequestMapping("/queryStudentList")
-    public PageInfo<Student> queryStudentList(int pageNum, int pageSize){
+    public PageInfo<Student> queryStudentList(int pageNum, int pageSize,Student student){
         //pageNum页码,pageSize条数
 
         PageHelper.startPage(pageNum,pageSize);

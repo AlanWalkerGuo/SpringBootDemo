@@ -6,6 +6,34 @@
     <title>Title</title>
 </head>
 <body>
-  AAA
+    <div  id="student"></div>
 </body>
+
+<script src="/js/jquery.js"></script>
+
+<script>
+    $(function () {
+        $.ajax({
+            type:"post",
+            url:"../queryUserStudent",
+            dataType:"json",
+            success:function (result) {
+              $.each(result,function (i,resul) {
+
+                  $("#student").append("<ul><li>"+resul.id+"</li><li>"+resul.name+"</li></ul>")
+              })
+
+            }
+
+        })
+
+    })
+    
+
+
+
+</script>
+
+
+
 </html>

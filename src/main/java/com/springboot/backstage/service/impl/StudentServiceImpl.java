@@ -17,18 +17,18 @@ public class StudentServiceImpl implements StudentService {
     @Override
     @Transactional
     public int save(Student student) {
-        return studentMapper.insertStudent(student);
+        return studentMapper.insert(student);
 
     }
 
     @Override
     public List<Student> queryList() {
-        return studentMapper.selectStudentList();
+        return studentMapper.selectAll();
     }
 
     @Override
     @Transactional
     public int removeStudent(String id) {
-        return studentMapper.delectStudent(id);
+        return studentMapper.deleteByPrimaryKey(id);
     }
 }

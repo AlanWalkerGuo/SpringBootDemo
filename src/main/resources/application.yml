@@ -55,9 +55,21 @@ spring:
 ########################################################
 
 mybatis:
-    mapperLocations: classpath:mybatis/*/*.xml
+    mapperLocations: classpath:mapper/*/*.xml
     # 给实体类起别名
     type-aliases-package: com.springboot.backstage.entity
+
+
+
+
+########################################################
+###通用mapper插件
+########################################################
+mapper:
+  mappers: tk.mybatis.mapper.common.Mapper
+  not-empty: false
+  identity: MYSQL
+  style: camelhump
 
 ########################################################
 ###分页插件
@@ -70,3 +82,8 @@ pagehelper:
   support-methods-arguments: true
   #为了支持startPage(Object params)方法，增加了该参数来配置参数映射，用于从对象中根据属性名取值， 可以配置 pageNum,pageSize,count,pageSizeZero,reasonable
   params: count=countSql
+
+
+
+
+
