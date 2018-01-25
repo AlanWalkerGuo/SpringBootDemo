@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class TestUser {
     @Id
     @Column(name = "ID")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "UUID")
     private String id;
 
     @Column(name = "NAME")
