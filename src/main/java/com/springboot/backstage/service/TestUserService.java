@@ -12,4 +12,5 @@ public interface TestUserService {
     public List<TestUser> selectTestUser();
     public TestUser selectOneTestUser();
     public List<TestUser> selectExample();
+    public List<TestUser> queryAll();
 }

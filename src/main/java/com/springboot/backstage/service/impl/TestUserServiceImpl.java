@@ -5,6 +5,7 @@ import com.springboot.backstage.entity.TestUser;
 import com.springboot.backstage.service.TestUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.ArrayList;
@@ -82,5 +83,10 @@ public class TestUserServiceImpl implements TestUserService{
         ;
 
         return testUserMapper.selectByExample(example);
+    }
+
+    @Override
+    public List<TestUser> queryAll() {
+        return testUserMapper.queryAll();
     }
 }

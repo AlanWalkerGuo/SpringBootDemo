@@ -47,9 +47,6 @@ spring:
         #黑名单
         #deny: 127.0.0.1
 
-
-
-
 ########################################################
 ###mybatis配置.
 ########################################################
@@ -83,6 +80,16 @@ pagehelper:
   #为了支持startPage(Object params)方法，增加了该参数来配置参数映射，用于从对象中根据属性名取值， 可以配置 pageNum,pageSize,count,pageSizeZero,reasonable
   params: count=countSql
 
+
+########################################################
+###打印log日志
+########################################################
+logging:
+  level:
+    root: info
+    org.springframework.web: debug
+    com.springboot.backstage.dao: debug
+  file: my.log
 
 
 
