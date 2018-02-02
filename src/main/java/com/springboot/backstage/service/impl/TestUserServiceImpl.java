@@ -24,11 +24,11 @@ public class TestUserServiceImpl implements TestUserService{
     @Override
     public int updateTestUser() {
         TestUser testUser=new TestUser();
-        testUser.setId("5f7139ef295d42a3b964c082e0dd838f");
+        testUser.setId("5f7139ef295d42a3b964c082e0dd838f1");
         testUser.setName("李四四");
         //会把没有值的属性变成空
         //return testUserMapper.updateByPrimaryKey(testUser);
-        return testUserMapper.updateByPrimaryKeySelective(testUser);
+        return testUserMapper.insert(testUser);
     }
 
     @Override
@@ -71,6 +71,7 @@ public class TestUserServiceImpl implements TestUserService{
         //排序方法setOrderByClause("字段名 ASC")DESC降序
         example.setOrderByClause("name ASC");
         example.createCriteria()
+
         //添加xxx字段等于value条件
         .andEqualTo("password","123456")
         //模糊查询xxx字段like value条件

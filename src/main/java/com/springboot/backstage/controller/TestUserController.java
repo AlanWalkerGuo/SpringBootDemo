@@ -1,6 +1,8 @@
 package com.springboot.backstage.controller;
 
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.springboot.backstage.entity.TestUser;
 import com.springboot.backstage.service.TestUserService;
 import org.slf4j.Logger;
@@ -62,8 +64,10 @@ public class TestUserController {
     }
 
     @RequestMapping("/queryAll")
-    public List<TestUser> queryAll(){
-        return testUserService.queryAll();
-
+    public PageInfo<TestUser> queryAll(int pageNum, int pageSize){
+        PageHelper.startPage(pageNum,pageSize);
+        List<TestUser> list=testUserService.queryAll();
+        PageInfo<TestUser> pageInfo = new PageInfo <TestUser>(list);
+        return pageInfo;
     }
 }
